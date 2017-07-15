@@ -1,0 +1,17 @@
+input[type="number"]{
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    width: 50px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+#submit{
+    width: 50px;
+    height: 28px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}

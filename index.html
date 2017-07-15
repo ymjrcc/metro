@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="metro.css">
+    <title>长三角地铁</title>
+</head>
+<body>
+    <div>
+        <input type="number" max="2100" min="1900" id="yearInput" placeholder="年">
+        <input type="number" max="12" min="1" id="monthInput" placeholder="月">
+        <input type="number" max="31" min="1" id="dateInput" placeholder="日">
+        <button id="submit" onclick="renderContent()">确定</button>
+    </div>
+    <hr>
+    <div id="content"></div>
+    <script src="metro.js"></script>
+</body>
+</html>
