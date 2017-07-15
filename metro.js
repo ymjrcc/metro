@@ -42,14 +42,16 @@ initInputs();
 
 //计算参数传入的日期距离输入框显示的日期是多少天
 const renderDate = dateStr =>{
-    let date2 = new Date(dateStr + ' 00:00:00');
+    let date2 = new Date(dateStr);
     date2 = date2.getTime();
 
     const yearVal = document.getElementById('yearInput').value;
-    const monthVal = document.getElementById('monthInput').value;
-    const dateVal = document.getElementById('dateInput').value;
+    let monthVal = document.getElementById('monthInput').value;
+    if(monthVal<10){monthVal = "0" + monthVal;}
+    let dateVal = document.getElementById('dateInput').value;
+    if(dateVal<10){dateVal = "0" + dateVal;}
 
-    let date1 = new Date(`${yearVal}-${monthVal}-${dateVal} 00:00:00`);
+    let date1 = new Date(`${yearVal}-${monthVal}-${dateVal}`);
     date1 = date1.getTime();
     const days = parseInt((date1-date2)/60/60/24/1000);
     return days;
