@@ -61,7 +61,8 @@ const renderDate = dateStr =>{
 const renderDateStr = () => {
     const month = +document.getElementById('monthInput').value - 1;
     const arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    const date = document.getElementById('dateInput').value;
+    let date = document.getElementById('dateInput').value;
+    date = date<10?('0'+date):date;
     return `${arr[month]}.${date}`;
 }
 
