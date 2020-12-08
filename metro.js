@@ -41,35 +41,79 @@ const initInputs = () => {
 initInputs();
 
 //计算参数传入的日期距离输入框显示的日期是多少天
-const renderDate = dateStr =>{
+const renderDate = dateStr => {
     let date2 = new Date(dateStr);
     date2 = date2.getTime();
 
     const yearVal = document.getElementById('yearInput').value;
     let monthVal = document.getElementById('monthInput').value;
-    if(monthVal<10){monthVal = "0" + monthVal;}
+    if (monthVal < 10) { monthVal = "0" + monthVal; }
     let dateVal = document.getElementById('dateInput').value;
-    if(dateVal<10){dateVal = "0" + dateVal;}
+    if (dateVal < 10) { dateVal = "0" + dateVal; }
 
     let date1 = new Date(`${yearVal}-${monthVal}-${dateVal}`);
     date1 = date1.getTime();
-    const days = parseInt((date1-date2)/60/60/24/1000);
+    const days = parseInt((date1 - date2) / 60 / 60 / 24 / 1000);
     return days;
 }
 
 //将输入框日期转化为日期字符串
 const renderDateStr = () => {
     const month = +document.getElementById('monthInput').value - 1;
-    const arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    let date = document.getElementById('dateInput').value;
-    date = date<10?('0'+date):date;
+    const arr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const date = document.getElementById('dateInput').value;
     return `${arr[month]}.${date}`;
 }
 
 
 const renderContent = () => {
     //拼接字符串
-    const content = `@杭州地铁官方 一${renderDate('2012-11-23')}天！二${renderDate('2014-11-23')}天！四${renderDate('2015-02-01')}天！@宁波轨道交通 一${renderDate('2014-05-29')}天！二${renderDate('2015-09-25')}天！@南京地铁 一${renderDate('2005-09-02')}天！二${renderDate('2010-05-27')}天！三${renderDate('2015-03-31')}天！四${renderDate('2017-01-17')}天！十${renderDate('2014-06-30')}天！S一${renderDate('2014-06-30')}天！S八${renderDate('2014-07-31')}天！@苏州轨道交通szrailtransit 一${renderDate('2012-04-27')}天！二${renderDate('2013-12-27')}天！四${renderDate('2017-04-14')}天！@无锡地铁 一${renderDate('2014-06-30')}天！二${renderDate('2014-12-27')}天！${renderDateStr()}`;
+    const content = `
+    @杭州地铁官方 
+    一${renderDate('2012-11-23')}天
+    二${renderDate('2014-11-23')}天
+    四${renderDate('2015-02-01')}天
+    五${renderDate('2019-06-23')}天
+    十六${renderDate('2020-04-22')}天
+
+    @宁波轨道交通
+    一${renderDate('2014-05-29')}天
+    二${renderDate('2015-09-25')}天
+    三${renderDate('2019-06-29')}天
+
+    @温州铁投
+    S一${renderDate('2019-01-21')}天
+
+    @南京地铁
+    一${renderDate('2005-09-02')}天
+    二${renderDate('2010-05-27')}天
+    三${renderDate('2015-03-31')}天
+    四${renderDate('2017-01-17')}天
+    十${renderDate('2014-06-30')}天
+    S一${renderDate('2014-06-30')}天
+    S三${renderDate('2017-12-05')}天
+    S七${renderDate('2018-05-25')}天
+    S八${renderDate('2014-07-31')}天
+    S九${renderDate('2017-12-29')}天
+
+    @苏州轨道交通szrailtransit
+    一${renderDate('2012-04-27')}天
+    二${renderDate('2013-12-27')}天
+    三${renderDate('2019-12-24')}天
+    四${renderDate('2017-04-14')}天
+
+    @无锡地铁
+    一${renderDate('2014-06-30')}天
+    二${renderDate('2014-12-27')}天
+    三${renderDate('2020-10-27')}天
+
+    @常州地铁官微
+    一${renderDate('2019-09-20')}天
+    @徐州地铁
+    一${renderDate('2019-09-27')}天
+    二${renderDate('2020-11-27')}天
+
+    ${renderDateStr()}`;
     //插入 DOM
     document.getElementById('content').innerText = content;
 }
