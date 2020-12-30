@@ -65,15 +65,18 @@ const renderDateStr = () => {
     return `${arr[month]}.${date}`;
 }
 
+let content = '';
 
 const renderContent = () => {
     //拼接字符串
-    const content = `
+    content = `
     @杭州地铁官方 
     一${renderDate('2012-11-23')}天
     二${renderDate('2014-11-23')}天
     四${renderDate('2015-02-01')}天
     五${renderDate('2019-06-23')}天
+    六${renderDate('2020-12-29')}天
+    七${renderDate('2020-12-29')}天
     十六${renderDate('2020-04-22')}天
 
     @宁波轨道交通
@@ -121,3 +124,14 @@ const renderContent = () => {
 }
 
 renderContent();
+
+document.getElementById('btn').addEventListener('click', () => {
+    const oInput = document.createElement('input');
+    oInput.value = content;
+    document.body.appendChild(oInput);
+    oInput.select(); // 选择对象
+    document.execCommand("Copy"); // 执行浏览器复制命令
+    oInput.className = 'oInput';
+    oInput.style.display = 'none';
+    alert('复制成功！');
+})
