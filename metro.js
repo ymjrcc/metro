@@ -55,7 +55,7 @@ const renderContent = () => {
     十${renderDate('2022-02-20')}天
     十六${renderDate('2020-04-22')}天
 
-    @绍兴市轨道交通
+    @绍兴京越地铁官方
     一${renderDate('2021-06-27')}天
 
     @海宁市轨道交通
@@ -70,6 +70,9 @@ const renderContent = () => {
 
     @温州铁投
     S一${renderDate('2019-01-21')}天
+
+    @金华轨道交通
+    金义线${renderDate('2022-08-29')}天
 
     @南京地铁
     一${renderDate('2005-09-02')}天
