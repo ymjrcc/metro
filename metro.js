@@ -74,6 +74,10 @@ const renderContent = () => {
 
     @金华轨道交通
     金义线${renderDate('2022-08-29')}天
+    义东线${renderDate('2022-12-27')}天
+
+    @台州轨道交通
+    S一${renderDate('2022-12-27')}天
 
     @南京地铁
     一${renderDate('2005-09-02')}天
