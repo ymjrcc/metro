@@ -42,6 +42,7 @@ let content = '';
 const renderContent = () => {
     //拼接字符串
     //参数日期是开通日的前一天
+    //参数日期表示开通第 0 天
     content = `
     @杭州地铁官方 
     一${renderDate('2012-11-23')}天
@@ -59,6 +60,7 @@ const renderContent = () => {
 
     @绍兴京越地铁官方
     一${renderDate('2021-06-27')}天
+    二${renderDate('2023-07-25')}天
 
     @海宁市轨道交通
     ${renderDate('2021-06-27')}天
