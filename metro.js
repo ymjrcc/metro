@@ -43,8 +43,7 @@ const renderContent = () => {
     //拼接字符串
     //参数日期是开通日的前一天
     //参数日期表示开通第 0 天
-    content = `
-    @杭州地铁官方 
+    content = `@杭州地铁官方 
     一${renderDate('2012-11-23')}天
     二${renderDate('2014-11-23')}天
     三${renderDate('2022-02-20')}天
@@ -141,7 +140,15 @@ document.getElementById('btn').addEventListener('click', () => {
     const rawText = document.getElementById('content').textContent;
     // 替换连续2个以上空格为换行符
     const cleanedText = rawText.replace(/\s{2,}/g, '\n');
-    navigator.clipboard.writeText(cleanedText).then(() => {
+    // 将 @ 替换成 \n@
+    const cleanedText2 = cleanedText.replace(/@/g, '\n@');
+    // 找到最后一个 \n，替换成 \n\n
+    const lastIndex = cleanedText2.lastIndexOf('\n');
+    const cleanedText3 = cleanedText2.slice(0, lastIndex) + '\n\n' + cleanedText2.slice(lastIndex + 1);
+    // 去除首尾空格
+    const cleanedText4 = cleanedText3.trim();
+    // 复制到剪贴板
+    navigator.clipboard.writeText(cleanedText4).then(() => {        
         alert('复制成功！');
     })
 })
