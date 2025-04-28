@@ -98,7 +98,7 @@ const renderContent = () => {
     S八${renderDate('2014-07-31')}天
     S九${renderDate('2017-12-29')}天
 
-    @苏州轨道交通szrailtransit
+    @苏州地铁
     一${renderDate('2012-04-27')}天
     二${renderDate('2013-12-27')}天
     三${renderDate('2019-12-24')}天
@@ -137,12 +137,11 @@ const renderContent = () => {
 renderContent();
 
 document.getElementById('btn').addEventListener('click', () => {
-    const oInput = document.createElement('input');
-    oInput.value = content;
-    document.body.appendChild(oInput);
-    oInput.select(); // 选择对象
-    document.execCommand("Copy"); // 执行浏览器复制命令
-    oInput.className = 'oInput';
-    oInput.style.display = 'none';
-    alert('复制成功！');
+    // 获取 #content 的内容，并复制到剪贴板
+    const rawText = document.getElementById('content').textContent;
+    // 替换连续2个以上空格为换行符
+    const cleanedText = rawText.replace(/\s{2,}/g, '\n');
+    navigator.clipboard.writeText(cleanedText).then(() => {
+        alert('复制成功！');
+    })
 })
