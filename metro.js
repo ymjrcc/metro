@@ -43,7 +43,8 @@ const renderContent = () => {
     //拼接字符串
     //参数日期是开通日的前一天
     //参数日期表示开通第 0 天
-    content = `@杭州地铁官方 
+    content = `
+    @杭州地铁官方 
     一${renderDate('2012-11-23')}天
     二${renderDate('2014-11-23')}天
     三${renderDate('2022-02-20')}天
@@ -70,6 +71,7 @@ const renderContent = () => {
     三${renderDate('2019-06-29')}天
     四${renderDate('2020-12-22')}天
     五${renderDate('2021-12-27')}天
+    七${renderDate('2025-08-28')}天
     八${renderDate('2025-06-29')}天
 
     @温州铁投

@@ -1,22 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="metro.css">
-    <title>长三角地铁</title>
+    <title>长三角地铁开通天数计算器</title>
 </head>
 <body>
-    <div>
-        <input type="number" max="2100" min="1900" id="yearInput" placeholder="年">
-        <input type="number" max="12" min="1" id="monthInput" placeholder="月">
-        <input type="number" max="31" min="1" id="dateInput" placeholder="日">
-        <button id="submit" onclick="renderContent()">确定</button>
+    <div class="container">
+        <div class="header">
+            <h1>长三角地铁开通天数</h1>
+            <p>计算各条地铁线路的开通天数</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <label for="yearInput">年</label>
+                        <input type="number" max="2100" min="1900" id="yearInput" placeholder="年">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="monthInput">月</label>
+                        <input type="number" max="12" min="1" id="monthInput" placeholder="月">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="dateInput">日</label>
+                        <input type="number" max="31" min="1" id="dateInput" placeholder="日">
+                    </div>
+                    <button id="submit" class="btn btn-primary" onclick="renderContent()">计算天数</button>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <div id="content"></div>
+            </div>
+        </div>
+        
+        <div class="button-section">
+            <button id="btn" class="btn btn-primary">一键复制</button>
+        </div>
     </div>
-    <hr>
-    <button id="btn" style="margin-bottom:8px">一键复制</button>
-    <div id="content"></div>
+    
     <script src="metro.js"></script>
 </body>
 </html>
