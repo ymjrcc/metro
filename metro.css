@@ -198,6 +198,7 @@ input[type="number"]:hover {
 /* 按钮区域 - 固定在底部 */
 .button-section {
     padding: 15px 20px;
+    padding-bottom: 0;
     text-align: center;
     background: #f8f9fa;
     border-top: 1px solid #e9ecef;
