@@ -71,6 +71,7 @@ const renderContent = () => {
     三${renderDate('2019-06-29')}天
     四${renderDate('2020-12-22')}天
     五${renderDate('2021-12-27')}天
+    六${renderDate('2026-01-15')}天
     七${renderDate('2025-08-28')}天
     八${renderDate('2025-06-29')}天
 
